@@ -1,0 +1,48 @@
+*
+{
+    margin: 20px;
+}
+#Navbar
+{
+    background-color: rgb(19, 19, 98);
+    height: 50px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    align-content: center;
+}
+.alink
+{
+    color: white;
+    text-decoration: none;
+}
+#f1
+{
+    border: 4.5px solid whitesmoke;  
+}
+.f1h
+{
+    color: rgb(4, 34, 62);
+}
+#f2
+{
+    border: 4.5px solid whitesmoke;  
+}
+.f2h
+{
+    color: rgb(4, 34, 62);
+}
+.img
+{
+    border-radius: 15px;
+}
+#footer
+{
+    background-color:rgb(23, 10, 3);
+    height: 50px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    align-content: center;
+}
+    
