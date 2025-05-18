@@ -1,0 +1,159 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+#header
+{
+    height: 10vh;
+    width: 100vw;
+    /* background-color: blanchedalmond; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#container
+{
+    width: 100vw;
+    /* border: 2px solid black; */
+    padding: 15px;
+}
+img{
+    width: 100%;
+    background-size: cover;
+}
+
+#Card1
+{
+    width: 100%;
+    height: 20%;
+    border: 1px solid lightgray;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+#Card2
+{
+    width: 100%;
+    height: 20%;
+    border: 1px solid lightgray;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+#Card3
+{
+    width: 100%;
+    height: 20%;
+    border: 1px solid lightgray;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+#Card4
+{
+    width: 100%;
+    height: 20%;
+    border: 1px solid lightgray;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+#Card5
+{
+    width: 100%;
+    height: 20%;
+    border: 1px solid lightgray;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+#Card6
+{
+    width: 100%;
+    height: 20%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+    #container
+    {
+        display: grid;
+        grid-template-areas: 
+        "a b c d"
+        "e f . ."
+        ;
+        gap: 20px;
+    }
+
+    .Cards
+    {
+        width: 100%;
+        border: 1px solid lightgray;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+}
+
+#Card-1
+{
+    grid-area: a;
+}
+#Card-2
+{
+    grid-area: b;
+}
+#Card-3
+{
+    grid-area: c;
+}
+#Card-4
+{
+    grid-area: d;
+}
+.Cards5
+{
+    grid-area: e;
+}
+#Card-6
+{
+    grid-area: f;
+}
+
+#footer
+{
+    width: 100vw;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
