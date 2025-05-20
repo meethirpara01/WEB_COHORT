@@ -1,0 +1,50 @@
+*
+{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+$primary-color: #111;
+$card-border-redius: 50%;
+
+html, body
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+
+    .container
+    {
+        width: 250px;
+        height: 300px;
+        border: 1px solid black;
+        background-color: $primary-color;
+        color: white;
+        border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        img 
+        {
+            width: 150px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            object-position: top;
+            border-radius: $card-border-redius;
+        }
+
+        h2 
+        {
+            font-size: 1.5rem;
+
+        }
+    }
+}
+
