@@ -7,7 +7,7 @@ button.addEventListener('click', function () {
     var c3 = Math.floor(Math.random()*256);
 
     cgc.style.backgroundColor = `rgb(${c1}, ${c2}, ${c3})`;
-})
+});
 
 
 let arr = ['GT', 'RCB', 'CSK', 'MI', 'KKR', 'LSG', 'PKBG', 'DC', 'RR'];
@@ -19,7 +19,7 @@ button1.addEventListener('click', function () {
 
     let num = Math.floor(Math.random()*arr.length);
     team.innerHTML = arr[num];
-})
+});
 
 
 var arrOfObj = 
@@ -82,6 +82,6 @@ button2.addEventListener('click', function () {
     team1.style.color = winner.primary;
     team1.style.backgroundColor = winner.secondary;
     
-})
+});
 
 

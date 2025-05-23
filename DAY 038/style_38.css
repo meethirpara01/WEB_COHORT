@@ -9,93 +9,106 @@
 html,
 body
 {
-    height: 100%;
     width: 100%;
-    background-color: black;
-    color: #fff;
+    padding: 1rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    
 }
 
-#box
+#container
 {
-    width: 40rem;
-    height: 40rem;
-    background-color: transparent;
-    font-size: 20px;
-    border-radius: 50%;
-    border: 8px solid white;
-}
-
-.card
-{
-    width: 20%;
-    aspect-ratio: 1/1;
-    background-color: #fff;
-    color: black;
+    width: 100%;
+    padding: 12rem;
+    background-color: #111;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    border-radius: 1.5rem;
+}
+
+#cg
+{
+    width: 22rem;
+    aspect-ratio: 1 / 1;
+    background-color: white;
+    border: 0.8rem solid white;
+    border-radius: 50%;
+}
+
+#btn
+{
+    padding: 1rem 2rem;
     font-size: 1.5rem;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 1rem;    
-}
-
-.img{
-    width: 10rem;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: top;
-}
-
-.btn
-{
-    padding: 1rem 5rem 1rem 5rem;
-    font-size: 1.2rem;
-    font-family :'Times New Roman', Times, serif;
+    border: 1px solid white;
     border-radius: 0.5rem;
+    cursor: pointer;
 }
 
-.btn:hover {
-    background-color: rgb(66, 120, 235);
-    /* font-size: 1rem; */
-}
-
-.h5
+#btn:hover
 {
-    color: red;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: wheat;
+    scale: 1.1;
 }
 
 
-.song
+#h1
 {
-    width: 22%;
-    aspect-ratio: 2/1;
-    background-color: #fff;
+    color: white;
+}
+
+#Team
+{
+    width: 7rem;
+    aspect-ratio: 2 / 1;
+    background-color: white;
+    border-radius: 0.7rem;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    border-radius: 2rem;
-    padding: 3rem;
+    justify-content: center;
+    font-size: 1.5rem; 
 }
-.progress
+
+#btn1
 {
+    padding: 0.7rem 1.5rem;
+    font-size: 1.5rem;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+#btn1:hover
+{
+    background-color: wheat;
+    scale: 1.1;
+}
+
+#Team1
+{
+    width: 7rem;
+    aspect-ratio: 2 / 1;
+    background-color: white;
+    border-radius: 0.7rem;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+    font-size: 1.5rem; 
 }
-.line 
+
+#btn2
 {
-    width: 85%;
-    aspect-ratio: 18/1;
-    border-radius: 5rem;
-    background-color: gray;
+    padding: 0.7rem 1.5rem;
+    font-size: 1.5rem;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+#btn2:hover
+{
+    background-color: wheat;
+    scale: 1.1;
 }
 
