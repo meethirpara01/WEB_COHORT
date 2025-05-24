@@ -1,0 +1,65 @@
+*
+{
+   margin : 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html,
+body
+{
+   height: 100%;
+   width: 100%;
+   background-color: #111;
+   display: flex;
+   align-items: flex-start;
+   justify-content: flex-start;
+   gap: 1rem;
+   flex-wrap: wrap;
+}
+#main
+{
+   height: 100%;
+   width: 100%;
+   background-color: #111;
+   display: flex;
+   align-items: flex-start;
+   justify-content: flex-start;
+   gap: 1rem;
+   padding: 1rem;
+   flex-wrap: wrap;
+}
+img
+{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+.card
+{
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+h5{
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+button{
+    padding: 0.5rem 1rem;
+    margin-top: 0.8rem;
+    border-radius: 0.5rem;
+    background-color: #111;
+    color: #fff;
+    font-size: 1rem;
+}
+button:hover
+{
+    cursor: pointer;
+    scale: 1.1;
+}

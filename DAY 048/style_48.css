@@ -1,0 +1,40 @@
+*
+{
+   margin : 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html,
+body
+{
+   height: 100%;
+   width: 100%;
+   background-color: #111;
+   color: #fff;
+}
+
+.box
+{
+    height: 30%;
+    width: 30%;
+    background-color: brown;
+}
+.circle
+{
+    height: 30%;
+    width: 30%;
+    border-radius: 50%;
+    background-color: blueviolet;
+}
+
+.light
+{
+    background-color: lightblue;
+    color: rgb(3, 33, 49);
+}
+.dark
+{
+    background-color: rgb(3, 33, 49);
+    color: lightblue;
+}

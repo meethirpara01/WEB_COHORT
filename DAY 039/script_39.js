@@ -29,7 +29,6 @@ var btn1 = document.querySelector('.btnD');
 var Amount = document.querySelector('.Amount');
 var growth = document.querySelector('.growth')
 var grow = 0;
-var ren = (Math.floor(Math.random()*11)) + 1;
 
 function Down(btn1, Amount, growth, grow, ren) 
 {
@@ -53,7 +52,7 @@ function Down(btn1, Amount, growth, grow, ren)
 }
 btn1.addEventListener('click', function()
 {
-    var ren = Math.floor(Math.random()*11);
+    var ren = Math.floor(Math.random()*11) + 1;
     console.log(ren);
     console.log('Downloading Time ' + ren);
     
