@@ -5,25 +5,191 @@
 }
 
 html, body {
-  height: 100%;
   width: 100%;
+  padding: 1rem;
+  background-color: #0d1117;
+  color: aliceblue;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 6rem;
+}
+html #nav, body #nav {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+html #nav .logo h2, body #nav .logo h2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+html #nav .moreinfo, body #nav .moreinfo {
+  display: flex;
   align-items: center;
   gap: 1rem;
 }
-html #btn, body #btn {
-  padding: 1rem 1.5rem;
-  font-size: 1.2rem;
-  background-color: #111;
-  color: #fff;
-  border: 1px solid #111;
-  border-radius: 1rem;
+html #nav .moreinfo .home, body #nav .moreinfo .home {
+  opacity: 0.6;
 }
-html #btn:hover, body #btn:hover {
-  scale: 1.1;
-  background-color: rgb(76, 76, 76);
-  color: #111;
+html #nav .moreinfo li, body #nav .moreinfo li {
+  list-style-type: none;
+}
+html #nav .moreinfo li a, body #nav .moreinfo li a {
+  text-decoration: none;
+  color: inherit;
   cursor: pointer;
+  font-size: 1.1rem;
+}
+html #nav .moreinfo .sign_up, body #nav .moreinfo .sign_up {
+  padding: 0.25rem;
+  font-size: 1.2rem;
+  border: 1px solid #0d1117;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: white;
+  background-color: darkgray;
+}
+html #nav .moreinfo .sign_up:hover, body #nav .moreinfo .sign_up:hover {
+  background-color: black;
+}
+html #contant, body #contant {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+html #contant #form, body #contant #form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+html #contant #form .input, body #contant #form .input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+html #contant #form .input #lable, body #contant #form .input #lable {
+  font-size: 1.3rem;
+}
+html #contant #form .input #text, body #contant #form .input #text {
+  padding: 0.7rem 2rem;
+  padding-left: 0.2rem;
+  font-size: 1.2rem;
+  padding-right: 3rem;
+  border: 1px solid #0d1117;
+  border-radius: 0.5rem;
+}
+html #contant #form #btn, body #contant #form #btn {
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.8rem 1rem;
+  font-size: 1.5rem;
+  border: 1px solid #0d1117;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  color: white;
+  background-color: darkgray;
+}
+html #contant #form #btn:hover, body #contant #form #btn:hover {
+  background-color: black;
+}
+html #sectionv, body #sectionv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+  gap: 1rem;
+}
+html #sectionv #covercont, body #sectionv #covercont {
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 1rem;
+  padding: 1rem 1rem;
+}
+html #sectionv #covercont #maincontant, body #sectionv #covercont #maincontant {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: 1.5rem;
+}
+html #sectionv #covercont #maincontant #img, body #sectionv #covercont #maincontant #img {
+  border-radius: 50%;
+  width: 45%;
+}
+html #sectionv #covercont #maincontant .cont, body #sectionv #covercont #maincontant .cont {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+html #sectionv #covercont #maincontant .cont #FF, body #sectionv #covercont #maincontant .cont #FF {
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (min-width: 1070px) {
+  html, body {
+    width: 100%;
+    padding: 1.5rem;
+    gap: 10rem;
+  }
+  html #nav, body #nav {
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  html #nav .logo h2, body #nav .logo h2 {
+    font-size: 2rem;
+  }
+  html #nav .moreinfo li a, body #nav .moreinfo li a {
+    padding: 0rem 2.6rem;
+    font-size: 1.6rem;
+  }
+  html #nav .moreinfo .sign_up, body #nav .moreinfo .sign_up {
+    padding: 0.7rem 1.2rem;
+    font-size: 1.3rem;
+  }
+  html #contant #form, body #contant #form {
+    gap: 4rem;
+  }
+  html #contant #form .input #lable, body #contant #form .input #lable {
+    font-size: 1.5rem;
+  }
+  html #contant #form .input #text, body #contant #form .input #text {
+    padding-right: 8rem;
+  }
+  html #contant #form #btn, body #contant #form #btn {
+    padding: 1rem 2rem;
+    font-size: 1.7rem;
+  }
+  html #sectionv #covercont, body #sectionv #covercont {
+    width: 60%;
+  }
+  html #sectionv #covercont #maincontant, body #sectionv #covercont #maincontant {
+    justify-content: center;
+    gap: 3rem;
+  }
+  html #sectionv #covercont #maincontant #img, body #sectionv #covercont #maincontant #img {
+    width: 30%;
+    border-radius: 50%;
+  }
+  html #sectionv #covercont #maincontant .cont, body #sectionv #covercont #maincontant .cont {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  html #sectionv #covercont #maincontant .cont #Sname, body #sectionv #covercont #maincontant .cont #Sname {
+    font-size: 1.5rem;
+  }
+  html #sectionv #covercont #maincontant .cont #FF, body #sectionv #covercont #maincontant .cont #FF {
+    display: flex;
+    gap: 0.5rem;
+  }
 }/*# sourceMappingURL=style_67.css.map */
