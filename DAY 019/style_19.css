@@ -127,6 +127,65 @@ main .verticle-text .bottom .text p {
   font-size: 1.5em;
   opacity: 0.6;
 }
+main .Our-Services-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+main .Our-Services-text .top {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+main .Our-Services-text .top h1 {
+  font-size: 3em;
+  font-weight: 200;
+  text-transform: uppercase;
+  padding-top: 0.5em;
+  letter-spacing: 0.05;
+}
+main .Our-Services-text .top .servises {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+main .Our-Services-text .top .servises .card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+main .Our-Services-text .top .servises .card h2 {
+  font-size: 1.7em;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+main .Our-Services-text .top .servises .card p {
+  width: 100%;
+  line-height: 1.5;
+  font-family: monospace;
+  font-size: 1.3em;
+  opacity: 0.5;
+}
+main .Our-Services-text .top .servises .card .about-sevices {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+}
+main .Our-Services-text .top .servises .card .about-sevices img {
+  width: 10%;
+  aspect-ratio: 1/1;
+}
+main .Our-Services-text .bottom {
+  width: 100%;
+}
+main .Our-Services-text .bottom img {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
 
 @media (min-width: 900px) {
   main {
@@ -165,5 +224,28 @@ main .verticle-text .bottom .text p {
   }
   main .verticle-text .bottom .text p {
     margin-top: auto;
+  }
+  main .Our-Services-text {
+    flex-direction: row;
+  }
+  main .Our-Services-text .top {
+    width: 50%;
+  }
+  main .Our-Services-text .top h1 {
+    width: 40%;
+    font-size: 6.2em;
+    font-weight: 250;
+    line-height: 0.9;
+  }
+  main .Our-Services-text .top .servises {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+  main .Our-Services-text .top .servises .card {
+    width: 35%;
+  }
+  main .Our-Services-text .bottom {
+    width: 50%;
   }
 }/*# sourceMappingURL=style_19.css.map */
