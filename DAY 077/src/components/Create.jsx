@@ -1,5 +1,6 @@
 import { nanoid } from "nanoid";
 import { useState } from "react";
+import style from "./Create.module.css";
 
 const Create = (props) => {
 
@@ -7,7 +8,7 @@ const Create = (props) => {
     const setTodos = props.setTodos;
     const [Title, setTitle] = useState("");
 
-    const submitHandler = (e) => {
+    const submitHandler = (e) => {  
         e.preventDefault();
         const newtodo = 
         {
@@ -37,7 +38,7 @@ const Create = (props) => {
   console.log(Todos);
   return (
     <>
-        <h1>Create Tasks</h1>
+        <h1 className="style.create_element_heading">Create Tasks</h1>
         <form onSubmit={submitHandler}>
             <input onChange={(e) => setTitle(e.target.value)} value={Title} type="text" placeholder="Title"/>
             <br />
