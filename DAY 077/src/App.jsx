@@ -12,7 +12,7 @@ const App = () => {
   ]);
 
   return (
-    <div>
+    <div className="text-white flex gap-2 w-screen h-screen bg-gray-800 p-20">
       <Create Todos={Todos} setTodos={setTodos}/>
       <hr />
       <Read Todos={Todos} setTodos={setTodos}/>

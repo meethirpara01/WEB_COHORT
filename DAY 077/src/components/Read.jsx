@@ -17,14 +17,14 @@ const Read = (props) => {
     }
     
     const renderTodo = Todos.map((todo) => {
-        return <li key={todo.id}>{todo.Title} | <span onClick={() => DeleteHandler(todo.id)}>Delete</span></li>
+        return <li className="p-4 mb-4 flex justify-between items-center bg-gray-900 rounded-2xl" key={todo.id}><span className="text-xl font-thin">{todo.Title}</span> <button className="text-red-400 font-thin cursor-pointer" onClick={() => DeleteHandler(todo.id)}>Delete</button></li>
   });
   return (
-    <Fragment>
-        <h1 className="Read_Element_Heading" style={{color: "tomato"}} >Tasks</h1>
+    <div className="w-[30%] p-10">
+        <h1 className="text-5xl font-thin mb-10"><span className="text-red-400">Pending</span> Todos</h1>
         <ol>{renderTodo}</ol>
-        <button onClick={DeleteAllHandler}>Dlelete All</button>
-    </Fragment>
+        <button className="mt-5 text-xl px-10 py-2 border rounded cursor-pointer" onClick={DeleteAllHandler}>Dlelete All</button>
+    </div>
   )
 }
 

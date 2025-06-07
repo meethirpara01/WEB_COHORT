@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 import { useState } from "react";
-import style from "./Create.module.css";
+// import style from "./Create.module.css";
 
 const Create = (props) => {
 
@@ -26,26 +26,18 @@ const Create = (props) => {
         // setTodos([...Todos], newtodo);    
   }
 
-  const buttoncss= 
-    {
-    color: "black",
-    padding: "5px 10px",
-    backgroundColor: "transparent",
-    border: "1px solid black",
-    borderRadius: "10px",
 
-    }
   console.log(Todos);
   return (
-    <>
-        <h1 className="style.create_element_heading">Create Tasks</h1>
+    <div className="w-[70%] p-10">
+        <h1 className="text-5xl font-thin mb-10">Set <span className="text-red-400">Reminders</span> For Tasks</h1>
         <form onSubmit={submitHandler}>
-            <input onChange={(e) => setTitle(e.target.value)} value={Title} type="text" placeholder="Title"/>
+            <input className="border-b w-full text-5xl font-thin p-2 outline-0" onChange={(e) => setTitle(e.target.value)} value={Title} type="text" placeholder="Title"/>
             <br />
             <br />
-            <button style={buttoncss}>Create Todo</button> 
+            <button className="mt-5 text-xl px-10 py-2 border rounded cursor-pointer">Create Todo</button> 
       </form>
-    </>
+    </div>
   )
 }
 
