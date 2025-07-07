@@ -2,16 +2,19 @@ import { useForm } from "react-hook-form";
 import { nanoid } from "nanoid";
 import { useContext } from "react";
 import { recipecontext } from "../context/RecipeContext";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
 
+  const navigate = useNavigate();
   const {data, setdata} = useContext(recipecontext);
     const {register, handleSubmit, reset } = useForm();
 
 
     const SubmitHandler = (recipe) =>
     {
-        recipe.nanoid = nanoid();
+        recipe.id = nanoid();
         console.log(recipe);
 
         // const copydata = [...data];
@@ -19,6 +22,9 @@ const Create = () => {
         // setdata(copydata);
 
         setdata([...data, recipe]);
+
+        toast.success("New Recipe Created!")
+        navigate("/recipes");
 
         reset();
 
@@ -40,9 +46,10 @@ const Create = () => {
     <textarea className=" block border-b outline-0 p-2" {...register("instructions")} placeholder="Write instructions Seperated By Comma"></textarea>
     <small className=" text-red-400">This Is How Error Is Shown</small>
     <select className=" block border-b outline-0 p-2" {...register("category")}>
-        <option value="cat-1">Category 1</option>
-        <option value="cat-2">Category 2</option>
-        <option value="cat-3">Category 3</option>
+        <option value="BreakFast">Break Fast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Supper">Supper</option>
+        <option value="Dinner">Dinner</option>
     </select>
     
     <button className=" mt-5 block bg-gray-900 px-4 py-2 rounded">Save Recipes</button>
