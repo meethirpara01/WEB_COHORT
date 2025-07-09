@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { recipecontext } from '../context/RecipeContext'
 import { useNavigate, useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
@@ -44,6 +44,18 @@ const SingleRecipe = () => {
         toast.error("Recipe Deleted Successfuflly!");
         navigate("/recipes");
     }
+
+
+    useEffect(() =>
+      {
+        console.log("SingleRecipe.JSX Mounted");
+    
+        return () =>
+        {
+          console.log("SingleRecipe.JSX UNMOUNT");
+          
+        }
+      }, []);
     
   return (
     recipe ?
