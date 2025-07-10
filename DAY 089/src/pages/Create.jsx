@@ -17,11 +17,12 @@ const Create = () => {
         recipe.id = nanoid();
         console.log(recipe);
 
-        // const copydata = [...data];
-        // copydata.push(recipe);
-        // setdata(copydata);
+        const copydata = [...data];
+        copydata.push(recipe);
+        setdata(copydata);
+        localStorage.setItem("recipes", JSON.stringify(copydata));
 
-        setdata([...data, recipe]);
+        // setdata([...data, recipe]);
 
         toast.success("New Recipe Created!")
         navigate("/recipes");

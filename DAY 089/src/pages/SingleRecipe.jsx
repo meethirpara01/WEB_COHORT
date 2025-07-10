@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { recipecontext } from '../context/RecipeContext'
 import { useNavigate, useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
@@ -15,17 +15,17 @@ const SingleRecipe = () => {
     
     const {register, handleSubmit, reset } = useForm({
         defaultValues:{
-            title: recipe.title,
-            image: recipe.image,
-            chef: recipe.chef,
-            description: recipe.description,
-            ingredients: recipe.ingredients,
-            instructions: recipe.instructions,
-            category: recipe.category
+            title: recipe?.title,
+            image: recipe?.image,
+            chef: recipe?.chef,
+            description: recipe?.description,
+            ingredients: recipe?.ingredients,
+            instructions: recipe?.instructions,
+            category: recipe?.category
         }
     });
 
-    const SubmitHandler = (updaterecipe) =>
+    const UpdateHandler = (updaterecipe) =>
     {
         const recipeIndex = data.findIndex(recipe => params.id == recipe.id);
         console.log(recipeIndex);
@@ -33,6 +33,7 @@ const SingleRecipe = () => {
         copydata[recipeIndex] = {...copydata[recipeIndex], ...updaterecipe };
         console.log(copydata[recipeIndex]);
         setdata(copydata);
+        localStorage.setItem("recipes", JSON.stringify(copydata));
         toast.success("Recipe Updated Successfuflly!");
         navigate("/recipes");
     }
@@ -41,12 +42,39 @@ const SingleRecipe = () => {
     {
         const filterdata = data.filter(r => r.id != params.id);
         setdata(filterdata);
+        localStorage.setItem("recipes", JSON.stringify(filterdata));
         toast.error("Recipe Deleted Successfuflly!");
         navigate("/recipes");
     }
 
 
-    useEffect(() =>
+    
+
+      const [favtoite, setFavtoite] = useState(
+        JSON.parse(localStorage.getItem("fav")) || []
+      );
+
+      const FavHandel = () =>
+      {
+        let cpoyfav = [...favtoite];
+        cpoyfav.push(recipe);
+        setFavtoite(cpoyfav);
+        localStorage.setItem("fav", JSON.stringify(cpoyfav));
+
+      };
+
+      const UnFavHandel = () =>
+      {
+        const filterFav = favtoite.filter((f) => f.id != recipe?.id);
+        setFavtoite(filterFav)
+        localStorage.setItem("fav", JSON.stringify(filterFav));
+
+      };
+      console.log(favtoite);
+      console.log(favtoite.find((f) => f.id == recipe?.id));
+
+
+      useEffect(() =>
       {
         console.log("SingleRecipe.JSX Mounted");
     
@@ -56,11 +84,16 @@ const SingleRecipe = () => {
           
         }
       }, []);
+      
     
   return (
     recipe ?
         <div className=' w-full flex'>
-            <div className='left w-1/2 p-2 content-center'>
+            
+            <div className=' relative left w-1/2 p-2 content-center'>
+            {favtoite.find((f) => f.id == recipe?.id) ? ( <i onClick={FavHandel} className=" right-[2%] absolute text-4xl text-red-400 ri-heart-fill"></i> ) : ( <i onClick={UnFavHandel} className=" right-[2%] absolute text-4xl text-red-400 ri-heart-line"></i> ) }
+            
+            <i onClick={UnFavHandel} className=" right-[2%] absolute text-4xl text-red-400 ri-heart-fill"></i>
                 <div className=' mr-3 mb-3 block w-full rounded overflow-hidden shadow'>
                     <img className=' object-cover object-center w-full h-[50vh]' src={recipe.image} alt='' />
                     <h1 className=' px-2 mt-2 font-black text-5xl'>{recipe.title}</h1>
@@ -72,7 +105,7 @@ const SingleRecipe = () => {
                 </div>
             </div>
         <div className='right w-1/2 p-2 flex justify-center'>
-            <form onSubmit={handleSubmit(SubmitHandler)}>
+            <form onSubmit={handleSubmit(UpdateHandler)}>
                 <input className=" block border-b outline-0 p-2" {...register("title")} type="text" placeholder="Recipes Title"/>
                 <small className=" text-red-400">This Is How Error Is Shown</small>
                 <input className=" block border-b outline-0 p-2" {...register("image")} type="url" placeholder="Enter Image URL"/>
