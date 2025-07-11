@@ -1,5 +1,6 @@
 {
-  "users": [
+  "users": 
+  [
     {
         "id": "hsegfisshc",
         "username": "jhon",
@@ -8,7 +9,9 @@
         
     }
   ],
-  "products": [
+  
+  "products": 
+  [
     {
         "id": "1",
         "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -22,5 +25,7 @@
             "count": 120
         }
     }
-  ]
+  ],
+
+  "cart": []
 }
