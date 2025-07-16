@@ -65,12 +65,14 @@ export default function FaceExpressionDetector() {
         height="480"
         className="rounded-xl"
       />
-      <canvas
+      
+    </div>
+  );
+}
+
+{/* <canvas
         ref={canvasRef}
         width="640"
         height="480"
         className="absolute top-0 left-0"
-      />
-    </div>
-  );
-}
+      /> */}

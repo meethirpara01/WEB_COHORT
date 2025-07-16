@@ -50,28 +50,29 @@ const SingleRecipe = () => {
 
     
 
-      const [favtoite, setFavtoite] = useState(
+      const [favtoite, setfavtoite] = useState(
         JSON.parse(localStorage.getItem("fav")) || []
       );
 
-      const FavHandel = () =>
+
+      const FavHandler = () =>
       {
         let cpoyfav = [...favtoite];
         cpoyfav.push(recipe);
-        setFavtoite(cpoyfav);
+        setfavtoite(cpoyfav);
         localStorage.setItem("fav", JSON.stringify(cpoyfav));
 
       };
 
-      const UnFavHandel = () =>
+      const UnFavHandler = () =>
       {
         const filterFav = favtoite.filter((f) => f.id != recipe?.id);
-        setFavtoite(filterFav)
+        setfavtoite(filterFav);
         localStorage.setItem("fav", JSON.stringify(filterFav));
 
       };
-      console.log(favtoite);
-      console.log(favtoite.find((f) => f.id == recipe?.id));
+      // console.log(favtoite);
+      // console.log(favtoite.find((f) => f.id == recipe?.id));
 
 
       useEffect(() =>
@@ -83,7 +84,7 @@ const SingleRecipe = () => {
           console.log("SingleRecipe.JSX UNMOUNT");
           
         }
-      }, []);
+      }, [favtoite]);
       
     
   return (
@@ -91,10 +92,12 @@ const SingleRecipe = () => {
         <div className=' w-full flex'>
             
             <div className=' relative left w-1/2 p-2 content-center'>
-            {favtoite.find((f) => f.id == recipe?.id) ? ( <i onClick={FavHandel} className=" right-[2%] absolute text-4xl text-red-400 ri-heart-fill"></i> ) : ( <i onClick={UnFavHandel} className=" right-[2%] absolute text-4xl text-red-400 ri-heart-line"></i> ) }
-            
-            <i onClick={UnFavHandel} className=" right-[2%] absolute text-4xl text-red-400 ri-heart-fill"></i>
+              
                 <div className=' mr-3 mb-3 block w-full rounded overflow-hidden shadow'>
+                  {favtoite.find((f) => f.id == recipe?.id) ? <i onClick={UnFavHandler} className=" absolute right-[2%] text-3xl text-red-400 ri-heart-fill"></i>
+                   : <i onClick={FavHandler} className=" absolute right-[2%] text-3xl text-red-400 ri-heart-line"></i>}
+                  
+                  
                     <img className=' object-cover object-center w-full h-[50vh]' src={recipe.image} alt='' />
                     <h1 className=' px-2 mt-2 font-black text-5xl'>{recipe.title}</h1>
                     <small className=' px-2 text-red-400 '>{recipe.chef}</small>
