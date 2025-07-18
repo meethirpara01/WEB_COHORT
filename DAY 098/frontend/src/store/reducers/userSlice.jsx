@@ -11,6 +11,10 @@ export const userSlice = createSlice({
     loaduser: (state, action) =>
     {
         state.users = action.payload;
+    },
+    removeuser: (state, action) =>
+    {
+        state.users = null;
     }
     
     },

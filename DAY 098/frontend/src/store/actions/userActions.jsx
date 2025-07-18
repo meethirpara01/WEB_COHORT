@@ -24,6 +24,7 @@ export const asynclogoutuser = () => async(dispatch, getState) =>
     try
     {
         localStorage.removeItem("user");
+        dispatch(removeus());
         console.log("User Logged Out!!");   
     }
     catch (error)

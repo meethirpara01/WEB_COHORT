@@ -13,6 +13,13 @@
       "email": "gupt@gmail.com",
       "password": "12",
       "isAdmin": false
+    },
+    {
+      "id": "0wSz14EdTtSysEg3KuadC",
+      "username": "Meet-Hirpara",
+      "email": "Meet@123.com",
+      "password": "123",
+      "isAdmin": false
     }
   ],
   "products": [

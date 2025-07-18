@@ -6,9 +6,9 @@ import { asyncdeleteproduct, asyncupdateproduct } from "../../store/actions/prod
 const ProductDetails = () => {
   const { id } = useParams();
   console.log(id);
-  const products = useSelector((state) => state.productReducer.products); 
+  const {productReducer: { products }, userReducer: { users }, } = useSelector((state) => state); 
   const product = products?.find((p) => p.id == id);
-  console.log(product);
+  // console.log(product, users);
   
 
   const {register, reset, handleSubmit} = useForm({
@@ -50,17 +50,15 @@ const ProductDetails = () => {
         </div> 
       </div>
       <hr />
-      <div className="w-full">
-        <form onSubmit={handleSubmit(UpdateProductHandler)} className=' flex flex-col w-1/2 justify-start items-start'>
+      {users && users?.isAdmin && <form onSubmit={handleSubmit(UpdateProductHandler)} className=' flex flex-col w-1/2 justify-start items-start'>
           <input {...register("image")} className=' outline-0 border-b p-2 text-3xl' type="url" placeholder='Image URL' />
           <input {...register("title")} className=' outline-0 border-b p-2 text-3xl' type="text" placeholder='Title' />
           <input {...register("price")} className=' outline-0 border-b p-2 text-3xl' type="number" placeholder='Price' />
           <textarea {...register("description")} className=' outline-0 border-b p-2 text-3xl' placeholder='Enter Description Here'></textarea>
           <input {...register("categorty")} className=' outline-0 border-b p-2 text-3xl' type="text" placeholder='Categorty' />
           <button className='mt-5 px-4 py-2 bg-blue-400 rounded'>Update Product</button>
-        </form>
-        <button onClick={DeleteProductHandler} className='mt-5 px-4 py-2 bg-red-400 rounded'>Delete Product</button>
-      </div>
+          <button type="button" onClick={DeleteProductHandler} className='mt-5 px-4 py-2 bg-red-400 rounded'>Delete Product</button>
+        </form>}
     </>
   ): "Loading product...";
 };
