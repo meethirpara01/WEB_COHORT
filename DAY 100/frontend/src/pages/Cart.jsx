@@ -14,7 +14,6 @@ const Cart = () => {
         const copyuser = { ...users, cart: [...users.cart] };
         copyuser.cart[index] = { ...copyuser.cart[index], quantity: copyuser.cart[index].quantity + 1,};
         dispatch(asyncupdateuser(copyuser.id, copyuser));
-
     }
 
     const DecreaceQuantityHandler = (product, index) =>
@@ -22,17 +21,13 @@ const Cart = () => {
         const copyuser = { ...users, cart: [...users.cart] };
         if (users.cart[index].quantity > 0)
         {
-            copyuser.cart[index] = { ...copyuser.cart[index], quantity: copyuser.cart[index].quantity - 1,};
-            
+            copyuser.cart[index] = { ...copyuser.cart[index], quantity: copyuser.cart[index].quantity - 1,}; 
         }
         else
         {
             copyuser.cart.splice(index, 1);
         }
         dispatch(asyncupdateuser(copyuser.id, copyuser));
-        
-
-        
     }
 
     const cartIterms = users.cart.map((c, index) => 
