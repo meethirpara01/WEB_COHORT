@@ -1,0 +1,51 @@
+{
+  "users": [
+    {
+      "id": "W7FTrOdF3DcKp2wPKkjKt",
+      "username": "admin",
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "isAdmin": true,
+      "cart": []
+    },
+    {
+      "id": "EmHagNcqFCxfl0l2_Mq1m",
+      "username": "Meet Hirpara",
+      "email": "Meet@123.com",
+      "password": "123",
+      "isAdmin": false,
+      "cart": [
+        {
+          "product": {
+            "id": "1",
+            "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+            "price": 109.95,
+            "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+            "categorty": "men's clothing",
+            "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+          },
+          "quantity": 4
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "categorty": "men's clothing",
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+    },
+    {
+      "id": "sxxUOyUJCjA8mKtXlZ1ec",
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJhZ3xlbnwwfHwwfHx8MA%3D%3D",
+      "title": "Collage Bag - Tommy Hilfiger",
+      "price": "1500",
+      "description": "This Is An Collage Bag With 20-L Of Width",
+      "categorty": "College Bag "
+    }
+  ],
+  "carts": []
+}
