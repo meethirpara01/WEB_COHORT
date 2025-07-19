@@ -55,6 +55,7 @@ const App = () => {
   return (
     <div className=' py-10 px-[10%] w-screen h-screen bg-gray-800 font-thin text-white'>
       <MyH1 bg="gray">Let's Learn useRef</MyH1>
+      <h1 className=' text-3xl '>{import.meta.env.VITE_APP_TIMEPASS}</h1>
 
       <input ref={inputRef} type='text' placeholder='Write Something...' className=' my-10 block border-b p-2 outline-0' />
       <button onClick={WatchHendler} className=' text-3xl px-3 bg-blue-400 rounded py-1 cursor-alias'>See Vlaue</button>
