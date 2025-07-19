@@ -16,15 +16,15 @@ const App = () => {
     !users && dispatch(asynccurrentuser());
   }, [users]);
 
-  useEffect(() =>
-  {
+  // useEffect(() =>
+  // {
     
-    products.length ==0 && dispatch(asyncloadproduct());
-  }, [products]);
+  //   products.length ==0 && dispatch(asyncloadproduct());
+  // }, [products]);
 
 
   return (
-    <div className=" overflow-auto px-[10%] text-white font-thin w-screen h-screen bg-gray-800 ">
+    <div className=" px-[10%] text-white font-thin w-screen bg-gray-800 ">
       <Nav />
       <Mainroutes />
     </div>
