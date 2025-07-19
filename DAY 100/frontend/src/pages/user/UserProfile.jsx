@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -37,7 +37,6 @@ const UserProfile = () => {
         dispatch(asyncdeleteuser(users.id));
         navigate("/login");
     }
-
 
   return users ? (
     <div>

@@ -1,16 +1,19 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import { Home } from "../pages/Home";
-import { Product } from "../pages/Product";
-import { Login } from "../pages/Login";
-import { Register } from "../pages/Register";
-import CreateProduct from '../pages/admin/CreateProduct';
-import ProductDetails from '../pages/admin/ProductDetails';
+import { Route, Routes } from 'react-router-dom';
+import { lazy } from "react";
 import { useSelector } from 'react-redux';
-import UserProfile from '../pages/user/UserProfile';
-import PageNotFound from '../pages/PageNotFound';
-import AuthWrapper from './AuthWrapper';
-import Cart from '../pages/Cart';
+import UnauthWrapper from './UnauthWrapper';
+const Home = lazy(() => import('../pages/Home'));
+const Product = lazy(() => import('../pages/Product'));
+const Login = lazy(() => import('../pages/Login'));
+const Register = lazy(() => import('../pages/Register'));
+const CreateProduct = lazy(() => import('../pages/admin/CreateProduct'));
+const ProductDetails = lazy(() => import('../pages/admin/ProductDetails'));
+const UserProfile = lazy(() => import('../pages/user/UserProfile'));
+const PageNotFound = lazy(() => import('../pages/PageNotFound'));
+const Cart = lazy(() => import('../pages/Cart'));
+const AuthWrapper = lazy(() => import('./AuthWrapper'));
+
 
 const Mainroutes = () => {
 
@@ -22,8 +25,9 @@ const Mainroutes = () => {
         <Route path='/' element={<Product />} /> 
         {/* <Route path='/' element={ users ? <Product /> : <Home />} />  */}
         {/* <Route path='/products' element={<Product />} />  */}
-        <Route path='/login' element={<Login />} /> 
-        <Route path='/register' element={<Register />} /> 
+
+        <Route path='/login' element={<UnauthWrapper> <Login /> </UnauthWrapper>} /> 
+        <Route path='/register' element={<UnauthWrapper> <Register /> </UnauthWrapper>} /> 
 
 
         <Route path='/admin/create-product' element={<AuthWrapper> <CreateProduct /> </AuthWrapper>} /> 

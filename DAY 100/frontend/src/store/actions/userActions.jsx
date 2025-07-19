@@ -1,6 +1,7 @@
 import { jsxs } from "react/jsx-runtime";
 import  axios  from "../../api/axiosconfig";
-import { loaduser } from "../reducers/userSlice";
+import { loaduser, removeuser } from "../reducers/userSlice";
+
 
 
 export const asynccurrentuser = () => async(dispatch, getState) =>
@@ -25,7 +26,8 @@ export const asynclogoutuser = () => async(dispatch, getState) =>
     {
         localStorage.removeItem("user");
         dispatch(removeuser());
-        console.log("User Logged Out!!");   
+        // console.log("User Logged Out!!"); 
+        // dispatch(asynccurrentuser());  
     }
     catch (error)
     {
@@ -42,6 +44,7 @@ export const asyncloginuser = (user) => async(dispatch, getState) =>
         const { data } = await axios.get(`/users?email=${user.email}&password = ${user.password}`);
         console.log(data[0]);
         localStorage.setItem("user", JSON.stringify(data[0]));
+        dispatch(asynccurrentuser());
     }
     catch (error)
     {
