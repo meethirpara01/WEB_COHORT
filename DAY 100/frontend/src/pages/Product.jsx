@@ -1,48 +1,15 @@
-import React, { Suspense, useEffect, useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { asyncupdateuser } from '../store/actions/userActions';
-import axios from '../api/axiosconfig';
-import InfiniteScroll from "react-infinite-scroll-component";
 
 export const Product = () => {
   // const products = useSelector((state) => state.productReducer.products);
 
   const users = useSelector((state) => state.userReducer.users);
-  // const products = useSelector((state) => state.productReducer.products);
+  const products = useSelector((state) => state.productReducer.products);
   // console.log(products);
-  const [products, setproducts] = useState([]);
-  const [hasMore, sethasMore] = useState(true);
-  
-  const fetchproducts = async () => 
-  {
-    try
-    {
-      const { data } = await axios.get(`/products?_limit=6&_start=${products.length}`);
-      console.log(data);
-      if (data.length == 0) 
-      {
-        sethasMore(false);
-      }
-      else
-      {
-        sethasMore(true);
-        setproducts([...products, ...data]);
-      } 
-    }
-    catch (error)
-    {
-      console.log(error);
-    }
-  }
-
-  
   const dispatch = useDispatch();
-
-  useEffect(()=> 
-  {
-    fetchproducts();
-  }, []);
 
   const AddtoCartHandler = (product) =>
   {
@@ -80,14 +47,7 @@ export const Product = () => {
   )
   
   return ( 
-     <InfiniteScroll  dataLength={products.length} next={fetchproducts()} hasMore={hasMore} loader={<h4>Loading...</h4>} endMessage={<p style={{ textAlign: 'center' }}><b>Yay! You have seen it all</b></p>}>
-        <div className=' overflow-auto flex flex-wrap'>
-          <Suspense fallback={ <h1 className=" text-center text-5xl text-yellow-500">LOADING...</h1> }>
-            {renderproduct}
-          </Suspense>
-          
-        </div>
-      </InfiniteScroll>
+    products.length > 0 ? <div className=' overflow-auto flex flex-wrap'>{renderproduct}</div> : "Loading..."
   )
 }
 
