@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import './App.css'
 import FaceExpressionDetector from './components/FaceExpressionDetector'
 
 function App() {
@@ -11,4 +9,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
