@@ -20,6 +20,12 @@
 
 }
 
+.mood-element button:active
+{
+    scale: 0.95;
+
+}
+
 .user-video-feed
 {
     width: 20rem;

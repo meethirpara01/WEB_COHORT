@@ -23,7 +23,7 @@ const MoodSongs = () => {
     <div className='mood-song'>
         <h2>Recommended Songs</h2>
         {Songs.map((song, index) => (
-            <div key={index} className='song'>
+            <div key={index} className='song '>
                 <div className='title'>
                     <h3>{song.title}</h3>
                     <h3>{song.artise}</h3>
