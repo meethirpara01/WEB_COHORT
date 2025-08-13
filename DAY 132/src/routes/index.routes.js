@@ -14,7 +14,7 @@ router.get('/', (req, res) =>
     res.json({
         message: "Welcome To The Meet's Server's Api"
     })
-})
+});
 
 
 module.exports = router;
