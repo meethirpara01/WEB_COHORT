@@ -46,7 +46,6 @@ router.get('/user', async (req, res) =>
         })
     }
 
-    
     try
     {
         const decoded = jwt.verify(token, process.env.SECRATE_KEY);
@@ -65,7 +64,6 @@ router.get('/user', async (req, res) =>
         res.status(401).json({
             message: "UNATHORIZED TOKEN NOT FOUND!"
         });
-
     }
 });
 
