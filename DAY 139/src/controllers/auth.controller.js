@@ -71,7 +71,6 @@ async function loginController(req, res)
             id: user._id
         }
     });
-
 }
 
 module.exports = {
