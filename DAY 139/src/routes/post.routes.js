@@ -8,5 +8,6 @@ const router = express.Router();
 
 const upload = multer({ Storage: multer.memoryStorage() })
 
-router.post('/', authMiddleware, createPostController);
+/* POST /API/POSTS [PROTECTED] {IMAGE-FILE} */
+router.post('/', authMiddleware, upload.single("image"), createPostController);
 module.exports = router;
